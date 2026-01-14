@@ -37,6 +37,7 @@ const person2 = {
 // 3. NEW Binding
 
 function Person ( name ) {
+  // this = {}
   this.name = name;
 }
 
@@ -45,3 +46,10 @@ const p2 = new Person("Kuchy")
 
 console.log(p1.name)
 console.log(p2.name);
+
+// 4. Default Binding
+
+globalThis.name = "Tony Stark"; // set a variable in global This object
+sayMyName(); // since JS doesnt find a name variable in the global object -> undefined
+
+// Order of precedence -> new > explicit > implicit > default
