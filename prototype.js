@@ -33,9 +33,12 @@ Person.prototype.getName = function () {
 
 function SuperHero ( fName, lName ) {
   //this = {}
-  Person.call(this, fName, lName); //--> Now this keyword in Person will refer to the this keyword in SuperHero  // firstName and lastName properties are inherited by SuperHero  
+  Person.call(this, fName, lName);// (constructor stealing) //--> Now this keyword in Person will refer to the this keyword in SuperHero  // firstName and lastName properties are inherited by SuperHero
 
-  this.isSuperHero = true;  
+  // This means Run Person constructor inside SuperHero, using SuperHero’s this
+  // but methods still aren't inherited
+
+  this.isSuperHero = true;
 }
 
 
